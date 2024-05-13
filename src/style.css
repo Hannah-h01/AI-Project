@@ -19,8 +19,8 @@ header {
 
 h1 {
     text-align: center;
-    font-weight: 800;
-    font-size: 36px;
+    font-weight: 650;
+    font-size: 34px;
     line-height: 1.5;
     color: #16547e;
 }
@@ -60,12 +60,17 @@ form {
 }
 
 .poem {
-    font-size: 16px;
+    font-size: 14px;
     background-color: #fff;
     padding: 20px;
     line-height: 2;
     border-left: 3px solid #81b2ad;
     box-shadow: 0px 4px 30px 0px rgba(39, 33, 66, 0.03);
+}
+
+.poem strong {
+    color: #81b2ad;
+    font-weight: 600;
 }
 
 footer {
