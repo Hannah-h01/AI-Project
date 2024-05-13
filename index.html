@@ -6,20 +6,20 @@
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
-    <title>AI City Poem Generator</title>
+    <title>AI Travel Itinerary Generator</title>
   </head>
   <body>
     <div class="container">
       <header>
-        <h1>AI Poem Generator</h1>
+        <h1>AI Travel Itinerary Generator ✈️</h1>
       </header>
 
       <main>
         <div class="form-container">
-          <form id="poem-generator-form">
+          <form id="itinerary-generator-form">
             <input
               type="text"
-              placeholder="Enter the topic of a poem"
+              placeholder="Enter the destination for the itinerary"
               autofocus
               required
               autocomplete="off"
@@ -28,8 +28,9 @@
             />
             <input type="submit" class="submit-button" />
           </form>
-          <div class="hint">i.e: Flower, Paris or Cheese</div>
+          <div class="hint">i.e: London, Copenhagen or Tokyo</div>
         </div>
+        <div class="itinerary hidden" id="itinerary"></div>
         <div class="poem hidden" id="poem"></div>
       </main>
 

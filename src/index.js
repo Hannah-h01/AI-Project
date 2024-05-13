@@ -1,6 +1,5 @@
-function displaypoem(response) {
-    console.log("poem generated");
-    new Typewriter("#poem", {
+function displayitinerary(response) {
+    new Typewriter("#itinerary", {
         strings: response.data.answer,
         autoStart: true,
         delay: 1,
@@ -9,22 +8,22 @@ function displaypoem(response) {
 }
 
 
-function generatepoem(event) {
+function generateitinerary(event) {
   event.preventDefault();
 
-    let instructionsInput = document.querySelector("#user-instructions");
+  let instructionsInput = document.querySelector("#user-instructions");
   let apiKey = "ba4od3a834c838682t553fe590d57caf";
   let context =
-    "You are a Poem expert and love to write short poems. Your mission is to generate a 4 line poem in basic HTML and separate each line with a <br />. Make sure to follow the user instructions. Do not include a title to the poem. Sign the poem with 'SheCodes AI' inside a <strong> element at the end of the poem and NOT at the beginning";
-  let prompt = `User instructions: Generate a poem about ${instructionsInput.value}`;
+    "You are a travel expert and love to write short itinerarys for visitors. Your mission is to generate a 3 day itinerary in basic HTML. Separate each day with a <br /> and a <strong> element. Make sure to follow the user instructions. Do not include a title to the itinerary. Sign the itinerary with 'SheCodes AI' inside a <strong> element at the end of the itinerary and NOT at the beginning";
+  let prompt = `User instructions: Create a three-day itinerary for a visitor to ${instructionsInput.value}, including must-see attractions and recommended dining spots.`;
   let apiURL = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
 
-  console.log("Generating poem");
-  console.log(`Prompt: ${prompt}`);
-  console.log(`Context: ${context}`);
+  let itineraryElement = document.querySelector("#itinerary");
+  itineraryElement.classList.remove("hidden");
+  itineraryElement.innerHTML = `<div class="generating">⏳ Generating an itinerary for ${instructionsInput.value}</div>`;
 
-  axios.get(apiURL).then(displaypoem);
+  axios.get(apiURL).then(displayitinerary);
 }
 
-let poemFormElement = document.querySelector("#poem-generator-form");
-poemFormElement.addEventListener("submit", generatepoem);
+let itineraryFormElement = document.querySelector("#itinerary-generator-form");
+itineraryFormElement.addEventListener("submit", generateitinerary);

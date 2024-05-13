@@ -25,13 +25,23 @@ h1 {
     color: #16547e;
 }
 
-form {
-    padding: 30px;
+.form-container {
     background-color: white;
-    box-shadow: 0px 20px 60px rgba(65, 50, 100, 0.08);
-    border-radius: 10px;
-    display: flex;
     margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 20px 60px rgba(65, 50, 100, 0.08);
+    padding: 15px 20px;
+}
+
+form {
+    display: flex;
+}
+
+.hint {
+    line-height: 1.5;
+    margin-top: 5px;
+    opacity: 0.6;
+    font-size: 12px;
 }
 
 .instructions {
@@ -59,7 +69,7 @@ form {
     cursor: pointer;
 }
 
-.poem {
+.itinerary {
     font-size: 14px;
     background-color: #fff;
     padding: 20px;
@@ -68,7 +78,11 @@ form {
     box-shadow: 0px 4px 30px 0px rgba(39, 33, 66, 0.03);
 }
 
-.poem strong {
+.hidden {
+    display: none;
+}
+
+.itinerary strong {
     color: #81b2ad;
     font-weight: 600;
 }
@@ -77,4 +91,20 @@ footer {
     text-align: center;
     font-size: 12px;
     margin-top: 30px;
+}
+
+.generating {
+    animation: blink-animation 1s steps(5, start) infinite;
+}
+
+@keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
+
+@-webkit-keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
 }
